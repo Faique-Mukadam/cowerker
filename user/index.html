@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zxx">
+   <head>
+      <title>Coworker</title>
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="" />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!-- For Clients slider -->
+      <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+      <!--flexs slider-->
+      <link href="css/JiSlider.css" rel="stylesheet">
+      <!--Shoping cart-->
+      <link rel="stylesheet" href="css/shop.css" type="text/css" />
+      <!--//Shoping cart-->
+      <!--stylesheets-->
+      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+   </head>
+   <body>
+      <div class="header-outs" id="home">
+         <div class="header-bar">           
+            <div class="container-fluid">
+               <div class="hedder-up row">
+                  <div class="col-lg-3 col-md-3 logo-head">
+                     <h1><a class="navbar-brand" href="index.html">Coworker</a></h1>
+                  </div>
+                  <div class="col-lg-5 col-md-6 search-right">
+                     <form class="form-inline my-lg-0">
+                        <input class="form-control mr-sm-2 search" type="search" placeholder="Search" style="color: black;">
+                        <button class="btn" type="submit">Search By City</button>
+
+                        <div class="element-holder" id="id_search" style="background-color: white;">
+                           <div id="id_search" class="element mt-2">
+                             <!-- <p>The optional fourth value defines the spread of the shadow.</p> -->
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-lg-4 col-md-3 right-side-cart">
+                     <div class="cart-icons">
+                        <ul>
+                           <li>
+                              <button type="button" id="id_btnModal" data-toggle="modal" data-target="#walletModal3"> <span id="id_wallet" class="fas fa-cart-arrow-down"></span></button>
+                           </li>
+                           <li>
+                              <button type="button" data-toggle="modal" data-target="#exampleModal"> <span class="far fa-user"></span></button>
+                           </li>
+                           <li>
+                              <h5 class="ml-5"><p id="id_userEmail"> </p></h5>
+                           </li>
+                           <!-- <li class="toyscart toyscart2 cart cart box_1">
+                              <form action="#" method="post" class="last">
+                                 <input type="hidden" name="cmd" value="_cart">
+                                 <input type="hidden" name="display" value="1">
+                                 <button class="top_toys_cart" type="submit" name="submit" value="">
+                                 <span class="fas fa-cart-arrow-down"></span>
+                                 </button>
+                              </form>
+                           </li> -->
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav ">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="shop.html" class="nav-link">New Launched</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Workspace
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="id_spaceType">
+                           <!-- <a class="nav-link" href="product.html">Kids Toys</a>
+                           <a class="nav-link " href="product.html">Dolls</a>
+                           <a class="nav-link " href="product.html">Key Toys</a>
+                           <a class="nav-link " href="product.html">Boys Toys</a> -->
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="service.html" class="nav-link">Service</a>
+                     </li>
+                     <!-- <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                     </li> -->
+                     <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pages
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="icon.html">404 Page</a>
+                           <a class="nav-link " href="typography.html">Typography</a>
+                        </div>
+                     </li> -->
+                     <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#" class="nav-link" id="id_logout">Logout</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <!-- Slideshow 4 -->
+         <div class="slider text-center">
+            <div class="callbacks_container">
+               <ul class="rslides" id="slider4">
+                  <li>
+                     <div class="slider-img one-img">
+                        <div class="container">
+                           <div class="slider-info ">
+                              <h5> SAVE <br>MONEY </h5>
+                              <div class="bottom-info">
+                                 <p>Choose and Work is free, you will only pay the rent to your space provider. More importantly, you will only pay for what you need.</p>
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="about.html">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="slider-img two-img">
+                        <div class="container">
+                           <div class="slider-info ">
+                              <h5>BOOK</h5>
+                              <div class="bottom-info">
+                                 <p>With only a few clicks, on your computer or on your phone, booking a space has never been easier. Choose the space you want and follow the booking steps. </p>
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="about.html">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="slider-img three-img">
+                        <div class="container">
+                           <div class="slider-info">
+                              <h5>CUSTOM YOUR<br> BOOKING</h5>
+                              <div class="bottom-info">
+                                 <p>Pick in advance all the services and equipments you need in order to optimize the efficiency of your meetings as you are booking your space. Coffee breaks, whiteboard, lunch… Work in the best conditions</p>
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="about.html">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <!-- This is here just to demonstrate the callbacks -->
+            <!-- <ul class="events">
+               <li>Example 4 callback events</li>
+               </ul>-->
+            <div class="clearfix"></div>
+         </div>
+      </div>
+      <!-- //banner -->
+      <!--service -->
+      <section class="service py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Why Book On Coworker</h3>
+            <div class="row text-center">
+               <div class="col-lg-4 col-md-6 abut-gride">
+                  <span class="fas fa-truck"></span>
+                  <h5>Validated Spaces</h5>
+                  <p class="mt-3"> Over 15,000 spaces and meeting rooms, with more than 300 new spaces joining each month.
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 abut-gride">
+                  <span class="fas fa-phone-volume"></span>  
+                  <h5>Trusted</h5>
+                  <p class="mt-3"> For Entrepeneurs to Fortune 500 companies, Coworker has over 3 million users.
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 abut-gride">
+                  <span class="fas fa-undo"></span>
+                  <h5> 100% Free of charge</h5>
+                  <p class="mt-3"> Whether one position or a team of 100, Coworker never charges you.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--//service --> 
+      <!-- about -->
+      <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-4">
+            <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3">Top Coworking Cities</h3>
+            <div class="row banner-below-w3l" id="id_topCities">
+               <!-- <div class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">
+                  <img src="images/a1.jpg" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3" style="color: black;">Baby Toys</h4>
+                  </div>
+                  <div class="outs_more-buttn">
+                     <a href="shop.html">331 spaces</a>
+                  </div>
+               </div>  -->              
+            </div>
+         </div>
+      </section>
+      <!-- //about -->
+      <!--new Arrivals -->
+      <!-- <section class="blog py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">New Arrivals</h3>
+            <div class="slid-img">
+               <ul id="flexiselDemo1">
+                  <li id="id_newArrival"> 
+                     <div class="agileinfo_port_grid">
+                        <img src="images/a1.jpg" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Delhi</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                             <a style="color: white">331 spaces</a>
+                        </div>
+                     </div>
+                  </li>                  
+               </ul>
+            </div>
+         </div>
+      </section> -->
+      <!--Product-about-->
+      <section class="about py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">About Coworker</h3>
+            <div class="about-products-w3layouts">
+               <p>Coworker is a website where you can search, find, and in some cases, reserve shared work space rentals near you in many different countries all around the world. 
+               </p>
+               <p class="my-lg-4 my-md-3 my-3">Coworking spaces list their shared office rental options on Coworker and outline what features and amenities their space can offer.
+               </p>
+               <p>Remote professionals and companies can then research and compare all of the different coworking spaces to find the one that will benefit their needs the most.
+               </p>
+            </div>
+         </div>
+      </section>
+      <!--//Product-about-->
+      <section class="sub-below-address py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Get In Touch Us</h3>
+            <div class="icons mt-4 text-center">
+               <ul>
+                  <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                  <li><a href="#"><span class="fas fa-envelope"></span></a></li>
+                  <li><a href="#"><span class="fas fa-rss"></span></a></li>
+                  <li><a href="#"><span class="fab fa-vk"></span></a></li>
+               </ul>
+               <p class="my-3">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+               </p>
+            </div>
+            <div class="email-sub-agile">
+               <form action="#" method="post">
+                  <div class="form-group sub-info-mail">
+                     <input type="email" class="form-control email-sub-agile" placeholder="Email">
+                  </div>
+                  <div class="text-center">
+                     <button type="submit" class="btn subscrib-btnn">Subscribe</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </section>
+      <!--//subscribe-->
+      <!-- footer -->
+      <footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center">
+         <div class="copy-agile-right">
+            <p> 
+               © 2021 Coworker. All Rights Reserved | Design by <a href="#" target="_blank">EnumTech</a>
+            </p>
+         </div>
+      </footer>
+      <!-- //footer -->
+      <!-- Modal 1-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="register-form">
+                     <form action="#" method="post">
+                        <div class="fields-grid">
+                           <!-- <div class="styled-input">
+                              <input type="text" placeholder="Your Name" name="Your Name" required="">
+                           </div> -->
+                           <div class="styled-input">
+                              <input type="email" id="id_usename" placeholder="Your Email" name="Your Email" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="password" id="id_pass" placeholder="password" name="password" required="">
+                           </div>
+                           <button type="button" id="id_login" class="btn subscrib-btnn">Sign in</button>
+                           <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal" class="float-right mt-5" style="color: blue;">New User</a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //Modal 1-->
+      <!-- Modal 2-->
+      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="register-form">
+                     <form action="#" method="post">
+                        <div class="fields-grid">
+                           <div class="styled-input">
+                              <input type="text" id="id_name" placeholder="Your Name" name="Your Name" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="email" id="id_email" placeholder="Your Email" name="Your Email" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="password" id="id_password" placeholder="password" name="password" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="password" id="id_cpassword" placeholder="Confirm password" name="password" required="">
+                           </div>
+                           <button type="button" id="id_cregisterbtn" class="btn subscrib-btnn">Sign up</button>
+                           <button type="submit" data-toggle="modal" data-target="#exampleModal" data-dismiss="modal" class="btn subscrib-btnn float-right">Sign in</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //Modal 2-->
+      <!--Wallet Modal 3-->
+      <div class="modal fade" id="walletModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Amount In Your Wallet</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="register-form">
+                     <form action="#" method="post">
+                        <div class="fields-grid">
+                           <div class="styled-input">
+                              <h6>Current Amount : </h6>
+                              <input type="text" placeholder="Your Current Amount" class="c_current_amount" name="Your Name" disabled="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="text" placeholder="Enter Amount" id="id_amount" name="Enter Name" required="">
+                           </div>
+                           <!-- <div class="styled-input">
+                              <input type="email" id="id_usename" placeholder="Your Email" name="Your Email" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="password" id="id_pass" placeholder="password" name="password" required="">
+                           </div> -->
+                           <button type="button" id="id_btn_wallet" class="btn subscrib-btnn">ADD</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //Wallet Modal 3-->
+      <!--js working-->
+      <script src='js/jquery-2.2.3.min.js'></script>
+      <script src="myjs/spaceType.js"></script>
+      <script src="myjs/register.js"></script>
+      <script src="myjs/login.js"></script>
+      <script src="myjs/index.js"></script>
+      <script src="myjs/logout.js"></script>
+      <script src="myjs/search.js"></script>
+      <script src="myjs/top-cities.js"></script>
+      <script src="myjs/add_wallet_amount.js"></script>
+      <!--//js working-->
+      <!-- cart-js -->
+      <script src="js/minicart.js"></script>
+      <script>
+         toys.render();
+         
+         toys.cart.on('toys_checkout', function (evt) {
+         	var items, len, i;
+         
+         	if (this.subtotal() > 0) {
+         		items = this.items();
+         
+         		for (i = 0, len = items.length; i < len; i++) {}
+         	}
+         });
+      </script>
+      <!-- //cart-js -->
+      <!--responsiveslides banner-->
+      <script src="js/responsiveslides.min.js"></script>
+      <script>
+         // You can also use "$(window).load(function() {"
+         $(function () {
+         	// Slideshow 4
+         	$("#slider4").responsiveSlides({
+         		auto: true,
+         		pager:false,
+         		nav:true ,
+         		speed: 900,
+         		namespace: "callbacks",
+         		before: function () {
+         			$('.events').append("<li>before event fired.</li>");
+         		},
+         		after: function () {
+         			$('.events').append("<li>after event fired.</li>");
+         		}
+         	});
+         
+         });
+      </script>
+      <!--// responsiveslides banner-->	 
+      <!--slider flexisel -->
+      <script src="js/jquery.flexisel.js"></script>
+      <script>
+         $(window).load(function() {
+         	$("#flexiselDemo1").flexisel({
+         		visibleItems: 3,
+         		animationSpeed: 3000,
+         		autoPlay:true,
+         		autoPlaySpeed: 2000,    		
+         		pauseOnHover: true,
+         		enableResponsiveBreakpoints: true,
+         		responsiveBreakpoints: { 
+         			portrait: { 
+         				changePoint:480,
+         				visibleItems: 1
+         			}, 
+         			landscape: { 
+         				changePoint:640,
+         				visibleItems:2
+         			},
+         			tablet: { 
+         				changePoint:768,
+         				visibleItems: 2
+         			}
+         		}
+         	});
+         	
+         });
+      </script>
+      <!-- //slider flexisel -->
+      <!-- start-smoth-scrolling -->
+      <script src="js/move-top.js"></script>
+      <script src="js/easing.js"></script>
+      <script>
+         jQuery(document).ready(function ($) {
+         	$(".scroll").click(function (event) {
+         		event.preventDefault();
+         		$('html,body').animate({
+         			scrollTop: $(this.hash).offset().top
+         		}, 900);
+         	});
+         });
+      </script>
+      <!-- start-smoth-scrolling -->
+      <!-- here stars scrolling icon -->
+      <script>
+         $(document).ready(function () {
+         
+         	var defaults = {
+         		containerID: 'toTop', // fading element id
+         		containerHoverID: 'toTopHover', // fading element hover id
+         		scrollSpeed: 1200,
+         		easingType: 'linear'
+         	};
+         	$().UItoTop({
+         		easingType: 'easeOutQuart'
+         	});
+         
+         });
+      </script>
+      <!-- //here ends scrolling icon -->
+      <!--bootstrap working-->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- //bootstrap working-->
+   </body>
+</html>

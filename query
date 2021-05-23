@@ -1,0 +1,14 @@
+select
+  (SELECT MAX(sb_space_id) FROM space_booking) maxBooked,
+  (SELECT MAX(sb_space_id) FROM space_booking
+  WHERE sb_space_id NOT IN (SELECT MAX(sb_space_id) FROM space_booking )) as 2nd_max_booked
+
+
+  SELECT space_id,space_name,space_image1,space_price FROM space WHERE space_id IN(2,8)
+
+  $sql ="SELECT COUNT(sb_id) AS spaceId FROM space_booking WHERE DATE(sb_created_at) = CURDATE()";
+
+
+  UPDATE space_booking 
+SET `sb_bdate` = DATE_ADD(`sb_bdate` , INTERVAL 2 DAY)
+WHERE `sb_id` = 1;
