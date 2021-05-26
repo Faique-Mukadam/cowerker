@@ -28,7 +28,7 @@ $(document).ready(function(e){
 			var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 			var space_category_id,space_name,space_location,space_area,space_description,
-			space_peopleQty,space_price,space_duration,space_map,space_url;
+			space_peopleQty,space_price,space_duration,space_map,space_url,img2,img3;
 			
 			
 			space_category_id = $("#id_space_category_name").val();
@@ -41,6 +41,8 @@ $(document).ready(function(e){
 			space_duration = $("#id_space-duration").val();
 			space_map = $("#id_space_map").val();
 			space_url = $("#id_space_image").val();
+			img2 = $(".imageTwo").val();
+			img3 = $("#id_space_imageThree").val();
 
 			if($('#id_space_name').val() == undefined || $('#id_space_name').val() == "")
 			{	
@@ -94,6 +96,18 @@ $(document).ready(function(e){
 			{		    
 				alert("Space image should not be empty..!");		  		
 				$('#id_space_image').focus();
+				return false;
+			}
+			else if(img2=='')
+			{		    
+				alert("Space image should not be empty..!");		  		
+				$('#id_space_imageTwo').focus();
+				return false;
+			}  
+			else if($('#id_space_imageThree').val() == undefined || $('#id_space_imageThree').val() == "")
+			{		    
+				alert("Space image should not be empty..!");		  		
+				$('#id_space_imageThree').focus();
 				return false;
 			} 
 			else if($('#id_space_category_name').val() == undefined || $('#id_space_category_name').val() == "")
