@@ -7,7 +7,7 @@ include '../../../common/connection.php';
 $spaceCategory_name=$_POST["spaceCategory_name"];
 
 
-$sqlchk = "SELECT st_name from space_type where st_name='" .$spaceCategory_name. "'";
+$sqlchk = "SELECT st_name from space_type where st_name='" .$spaceCategory_name. "' and st_status = '1'";
 $result = $conn->query($sqlchk);
 
 			if ($result->num_rows > 0) {
