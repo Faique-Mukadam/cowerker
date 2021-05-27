@@ -161,6 +161,10 @@ $(document).ready(function (e) {
     // ------------------Book using COD---------------- 
     $("#id_btnBookingCod").click(function () {
 
+      var nameRegex = /^[a-zA-Z ]{2,30}$/;
+      var numberRegex = /^[0-9]{1,10}$/;
+      var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
       var fullName, companyEmail, companyName, mobile, bookingDate;
 
       fullName = $("#id_fullname").val();
@@ -203,6 +207,33 @@ $(document).ready(function (e) {
           alert("Booking date should not empty.!!");
           $('#bookingDate').focus();
           return false;
+        }
+	      else if(!nameRegex.test($('#id_fullname').val())){
+          
+		      	alert("Invalid Full Name.!!");
+	          $('#id_fullname').focus();
+	          return false;
+	      }
+	      else if(!nameRegex.test($('#id_companyName').val())){
+          
+		      	alert("Invalid Company Name.!!");
+	          $('#id_companyName').focus();
+	          return false;
+	      }
+	      else if(!emailRegex.test($('#id_companyEmail').val())){
+
+		      	alert("Invalid Email.!!");
+	          $('#id_email').focus();
+	          return false;
+	      }
+	      else if(!numberRegex.test($('#id_mobile').val())){
+          
+		      	alert("Invalid Mobile Number.!!");
+	          $('#id_mobile').focus();
+	          return false;
+	      }
+        else if(mobile.length != 10){
+            alert("Enter 10 Digit Mobile Number.!!");
         }
         // else if (card_name == undefined || card_name == "") {
         //     alert("Card holder name should not empty.!!");          
