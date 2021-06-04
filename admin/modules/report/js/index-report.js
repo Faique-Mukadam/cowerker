@@ -85,10 +85,16 @@
         })
         .done(function(response){ 
 
-          // alert(response.success);
+          // alert(response.space_price);
           if(response.success){
-            // alert(response.user_id);
-            $("#id_totalAmount").html(response.space_price);         
+            if(response.space_price =='null'){
+
+              $("#id_totalAmount").html("0");               
+            }
+            else{
+              // alert(response.space_price);
+              $("#id_totalAmount").html(response.space_price); 
+            }        
           }
 
         })

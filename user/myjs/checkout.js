@@ -8,6 +8,8 @@ $(document).ready(function (e) {
   else {
     var pdf_space_name, pdf_space_location, pdf_space_area, pdf_space_pQty, space_duration_temp, pdf_space_price;
     space_id = localStorage.getItem("space_id");
+
+    facilitiesSum();
     // ------------------Get SpaceDetails By Space ID  ------------------
     // alert(space_id);        
     $.ajax({
@@ -35,6 +37,23 @@ $(document).ready(function (e) {
         alert("connection Failed");
       });
     // ------------------End Get SpaceDetails By Space ID ------------------
+
+    //------------------Start on load update space facility------------------
+    $.ajax({
+      type: 'POST',
+      url: 'php/updateFacilitiesOnLoad-by-facilityId.php',
+      data: { space_id: space_id }
+    })
+    .done(function (response) {
+
+      // alert(response);
+      // window.location.href = "checkout.html";
+    })
+    .fail(function (response) {
+      alert("connection Failed");
+    });
+
+    //------------------End on load update space facility------------------
 
 
     var today = new Date();
@@ -97,64 +116,57 @@ $(document).ready(function (e) {
     // ------------------End Space Facilities ------------------ 
 
     // ------------------Start Space Facilities Sum ------------------
-    // alert(space_id);        
-    $.ajax({
-      type: 'POST',
-      url: 'php/get-facilitiesSum-by-spaceId.php',
-      data: { space_id: space_id }
-    })
-      .done(function (response) {
-        // alert("Faci sum: "+response); 
-        if (response == "Rs.") {
-          facilityAmount = 0;
-          // alert(facilityAmount);
-          $("#id_facilitySum").html(facilityAmount);
-          totalAmount = parseInt(spaceAmount);
-
-          // alert(" Final: "+totalAmount);
-          $("#id_finalAmount").html(totalAmount);
-        }
-        else {
-
-          facilityAmount = response.split(".").pop();
-          facilityAmount = $.trim(facilityAmount);
-
-          $("#id_facilitySum").html(response);
-          totalAmount = parseInt(facilityAmount) + parseInt(spaceAmount);
-
-          // alert(" Final: "+totalAmount);
-          $("#id_finalAmount").html(totalAmount);
-
-        }
-      })
-      .fail(function (response) {
-        alert("connection Failed");
-      });
+    
+    
 
     // ------------------End Space Facilities Sum ------------------           
 
 
     // ------------------Start Space Delete Facilities ------------------  
 
+    // $("#id_facilities").on("click", ".c_delete", (function (ev) {
+
+    //   var space_facility_id;
+    //   // space_facility_id = $(this).parent().parent().children().next().children().html();
+    //   space_facility_id = $(this).parent().parent().children().children().html();
+    //   // alert(space_facility_id);
+
+    //   $.ajax({
+    //     type: 'POST',
+    //     url: 'php/updateFacilities-by-facilityId.php',
+    //     data: { space_facility_id: space_facility_id }
+    //   })
+    //     .done(function (response) {
+
+    //       window.location.href = "checkout.html";
+    //     })
+    //     .fail(function (response) {
+    //       alert("connection Failed");
+    //     });
+    // }));
+
+
+
     $("#id_facilities").on("click", ".c_delete", (function (ev) {
 
-      var space_facility_id;
-      // space_facility_id = $(this).parent().parent().children().next().children().html();
-      space_facility_id = $(this).parent().parent().children().children().html();
-      // alert(space_facility_id);
+      
+      var fid = $(this).attr("id");
 
-      $.ajax({
-        type: 'POST',
-        url: 'php/updateFacilities-by-facilityId.php',
-        data: { space_facility_id: space_facility_id }
-      })
-        .done(function (response) {
-
-          window.location.href = "checkout.html";
-        })
-        .fail(function (response) {
-          alert("connection Failed");
+      if (confirm("Sure you want to delete this facility?")) {
+        $.ajax({
+            type : "POST",
+            url : "php/updateFacilities-by-facilityId.php", //URL to the delete php script
+            data: { space_facility_id: fid },
+            success : function() {
+            }
         });
+        $(this).parents(".c_facilitiesData").animate("fast").animate({
+            opacity : "hide"
+        }, "slow");
+        facilitiesSum();
+      }
+      return false;
+      
     }));
 
     // ------------------End Space Delete Facilities ------------------  
@@ -572,4 +584,40 @@ $(document).ready(function (e) {
       popupWin.document.close();
     }
   }   //End Else
+
+  function facilitiesSum(){
+    // alert(space_id);        
+    $.ajax({
+      type: 'POST',
+      url: 'php/get-facilitiesSum-by-spaceId.php',
+      data: { space_id: space_id }
+    })
+      .done(function (response) {
+        // alert("Faci sum: "+response); 
+        if (response == "Rs.") {
+          facilityAmount = 0;
+          // alert(facilityAmount);
+          $("#id_facilitySum").html(facilityAmount);
+          totalAmount = parseInt(spaceAmount);
+
+          // alert(" Final: "+totalAmount);
+          $("#id_finalAmount").val(totalAmount);
+        }
+        else {
+
+          facilityAmount = response.split(".").pop();
+          facilityAmount = $.trim(facilityAmount);
+
+          $("#id_facilitySum").html(response);
+          totalAmount = parseInt(facilityAmount) + parseInt(spaceAmount);
+
+          // alert(" Final: "+totalAmount);
+          $("#id_finalAmount").val(totalAmount);
+
+        }
+      })
+      .fail(function (response) {
+        alert("connection Failed");
+      });
+  }
 });

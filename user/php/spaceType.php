@@ -4,7 +4,7 @@ require '../../php/connection.php';
 
 
 
-$sql = "SELECT st_id,st_name FROM space_type";
+$sql = "SELECT st_id,st_name FROM space_type WHERE st_status='1'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

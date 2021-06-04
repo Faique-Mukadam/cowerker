@@ -3,7 +3,7 @@ session_start();
 include '../../../common/connection.php';
  
 
-$sql="SELECT SUM(space_price) as totalAmount FROM space WHERE space_status = 'booked'";
+$sql="SELECT SUM(sb_smount) as totalAmount FROM space_booking";
 
 
 $result = $conn->query($sql);

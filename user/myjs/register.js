@@ -47,6 +47,12 @@ $(document).ready(function(e){
 	        return false;
 	          
 	      } 
+	      else if(!nameRegex.test($('#id_name').val())){
+          
+		    	alert("Enter only character.!!");
+	          	$('#id_name').focus();
+	          	return false;
+	      }
 	      else if(!emailRegex.test($('#id_email').val())){
 
 	      	  alert("Invalid Email.");
